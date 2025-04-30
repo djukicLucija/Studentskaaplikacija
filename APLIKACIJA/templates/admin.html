@@ -1,0 +1,19 @@
+{% if session.username %}
+<p>Ulogovani ste kao: {{session.username}} | <a href="{{ url_for('auth.logout') }}">Logout</a></p>
+{% endif %}
+
+<h2>Admin panel</h2>
+<form method="post" action="/admin/add_user">
+    <input name="username" placeholder="Korisničko ime">
+    <input name="password" placeholder="Lozinka">
+    <select name="role">
+        <option>student</option>
+        <option>profesor</option>
+    </select>
+    <button>Dodaj korisnika</button>
+</form>
+<form method="post" action="/admin/add_subject">
+    <input name="subject" placeholder="Predmet">
+    <button>Dodaj predmet</button>
+</form>
+

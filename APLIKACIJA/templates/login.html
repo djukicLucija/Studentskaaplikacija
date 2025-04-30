@@ -1,0 +1,13 @@
+{% if session.username %}
+    <p>Ulogovani ste kao: {{session.username}} | <a href="{{ url_for('auth.logout') }}">Logout</a></p>
+{% endif %}
+
+<h2>Login</h2>
+<form method="post">
+    <input name="username" placeholder="Korisničko ime">
+    <input name="password" type="password" placeholder="Lozinka">
+    <button>Login</button>
+</form>
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}

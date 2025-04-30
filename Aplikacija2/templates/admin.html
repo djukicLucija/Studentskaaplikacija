@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static,filename='css/style.css')}}">
+    <title>Admin Panel</title>
+</head>
+<body>
+<div class="container">
+<h1>Edituj opise klasa</h1>
+<form method="post">
+{% for key, value in description.items() %}
+ <label>{{key}}</label><br>
+ <textarea name="{{key}}" rows="2">{{value}}</texttarea><br>
+{% endfor %}
+<button type="submit">Sacuvaj</button>
+
+</form>
+<a href="{{url_for('logout')}}">Odjavi se</a>
+</div>
+</body>
+</html>

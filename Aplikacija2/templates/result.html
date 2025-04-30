@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Rezultat detekcije</title>
+    <link rel="stylesheet" href="{{url_for('static,filename='css/style.css')}}">
+
+</head>
+<body>
+<div class="container">
+<h1>Rezultati detekcije</h1>
+<img src="{{url_for('static',filename=image)}}" width="100%" style="border-radius:10px;"> <br>
+<ul>
+    {% for key, value in description.items()%}
+        <li><strong>{{key}}</strong>:{{value}}</li>
+    {% endfor %}
+</ul>
+<a href="{{url_for('index')}}">Nazad</a>
+</div> 
+</body>
+</html>
